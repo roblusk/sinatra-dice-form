@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1><%= @dice %>d<%= @sides %></h1>
+  <% route = "process_roll?dice=" + @dice.to_s + "&sides=" + @sides.to_s%>
+  <a href=<%=route%>>Roll again!</a>
+  <a> | </a>
+  <a href="/">Go back home</a>
+
+  <ol>
+    <% @rolls.each do |roll| %>
+      <li><em>Result: </em><strong><%= roll %></strong></li>
+    <% end %>
+  </ol>
+</body>
